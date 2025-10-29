@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Квиз по темам</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Выберите вопрос</h1>
+
+  <!-- Блок выбора вопросов -->
+  <div id="question-board"></div>
+
+  <!-- Блок отображения выбранного вопроса -->
+  <div id="selected-question-block" class="hidden">
+    <h2 id="quiz-question"></h2>
+  </div>
+
+  <!-- Блок с вариантами ответов -->
+  <div id="answers-block" class="hidden">
+    <div id="answers"></div>
+  </div>
+
+  <!-- Отображение очков -->
+  <div id="score">Очки: 0</div>
+
+  <!-- Скрипты -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
