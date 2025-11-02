@@ -1,3 +1,4 @@
+
 const quizData = {
   "Мир танков": [
     {
@@ -105,20 +106,20 @@ const quizData = {
     },
     {
       points: 200,
-      question: "Какой формат контента стал популярным в Instagram в 2020 году?",
-      options: ["Stories", "Reels", "IGTV", "Live"],
+      question: "Кто является самым добрым человеком в Instagram Reels?",
+      options: ["Santa Claus", "Gypsy Crushader", "Travis Scott", "Kim Jong-un"],
       correct: 1
     },
     {
       points: 300,
-      question: "Какой фильтр был одним из первых популярных в Instagram?",
-      options: ["Valencia", "Clarendon", "Lark", "X-Pro II"],
+      question: "Почему расизм это плохо?",
+      options: ["Противоречит международным нормам", "Приводит к несправедливости", "Унижает человеческое достоинство", " "],
       correct: 3
     },
     {
       points: 400,
-      question: "Какой максимальный лимит символов в подписи к посту в Instagram?",
-      options: ["1000", "2200", "500", "1500"],
+      question: "Кто же это, это же сам ....?",
+      options: ["Batman", "Osama Bin Ladan", "Messi", "Rammstein"],
       correct: 1
     },
     {
