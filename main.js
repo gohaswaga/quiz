@@ -18,11 +18,18 @@ function renderBoard() {
       const btn = document.createElement("button");
       const key = `${topic}-${index}`;
       btn.textContent = `${q.points} баллов`;
+
       if (usedQuestions.has(key)) {
         btn.classList.add("locked");
         btn.disabled = true;
       }
-      btn.onclick = () => startQuiz(topic, index);
+
+      btn.onclick = () => {
+        if (!usedQuestions.has(key)) {
+          startQuiz(topic, index);
+        }
+      };
+
       topicDiv.appendChild(btn);
     });
     board.appendChild(topicDiv);
@@ -31,10 +38,13 @@ function renderBoard() {
 
 function startQuiz(topic, index) {
   const questionData = quizData[topic][index];
+  board.classList.add("hidden");
   selectedQuestionBlock.classList.remove("hidden");
   answersBlock.classList.remove("hidden");
+
   quizQuestion.textContent = questionData.question;
   answersDiv.innerHTML = "";
+
   questionData.options.forEach((opt, i) => {
     const btn = document.createElement("button");
     btn.textContent = opt;
@@ -46,13 +56,18 @@ function startQuiz(topic, index) {
 function checkAnswer(topic, index, selected) {
   const questionData = quizData[topic][index];
   const key = `${topic}-${index}`;
+
   if (selected === questionData.correct) {
     score += questionData.points;
   }
+
   usedQuestions.add(key);
   scoreDisplay.textContent = `Очки: ${score}`;
+
   selectedQuestionBlock.classList.add("hidden");
   answersBlock.classList.add("hidden");
+  board.classList.remove("hidden");
+
   renderBoard();
 }
 
