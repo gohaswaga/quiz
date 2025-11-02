@@ -1,28 +1,107 @@
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
 }
 
-#question-board {
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.board {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
+  justify-content: center;
 }
 
 .topic {
-  margin-bottom: 20px;
+  background-color: #2f2f44;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  min-width: 200px;
+  text-align: center;
 }
 
-button {
+.topic h3 {
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.topic button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
   padding: 10px;
+  font-size: 16px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.topic button:hover {
+  background-color: #666;
+}
+
+.locked {
+  background-color: #777 !important;
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.question-block,
+.answers-block {
+  margin-top: 30px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+#answers button {
+  margin: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+#answers button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+#score {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #222;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #000;
 }
 
 .hidden {
   display: none;
 }
 
-.locked {
-  background-color: #ccc;
-  cursor: not-allowed;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
